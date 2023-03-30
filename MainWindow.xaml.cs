@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Peach_Launcher.Panels.Sys;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,20 @@ namespace Peach_Launcher
         {
             InitializeComponent();
         }
+
+        #region ========== Action Bar Events ==========
+
+        private void btnPowerOptions_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Point actBarPos = rectActionBar.TranslatePoint(new Point(0, 0), this);
+
+            pwrOpts powerOptionsPanel = new pwrOpts();
+            powerOptionsPanel.Left = actBarPos.X;
+            powerOptionsPanel.Top = actBarPos.Y + 50;
+            powerOptionsPanel.Owner = this;
+            powerOptionsPanel.Show();
+        }
+
+        #endregion
     }
 }

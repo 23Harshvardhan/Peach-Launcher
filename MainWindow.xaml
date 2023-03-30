@@ -1,12 +1,16 @@
-﻿<Window x:Class="Peach_Launcher.MainWindow"
+﻿<Window x:Name="mainWind" x:Class="Peach_Launcher.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Peach_Launcher"
+        xmlns:local="clr-namespace:Peach_Launcher" xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Peach" Height="1080" Width="1920" ResizeMode="NoResize" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="/Resource/Wallpapers/galaxy.jpg"/>
+    </Window.Background>
     <Grid>
-        
+        <Rectangle x:Name="rectActionBar" Height="41" Margin="0,10,10,0" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Fill="#7FFFFFFF" HorizontalAlignment="Right" Width="284"/>
+        <Image x:Name="btnPowerOptions" HorizontalAlignment="Left" Height="25" Margin="1876,18,0,0" VerticalAlignment="Top" Width="25" Source="/Resource/SysImg/power.png" MouseDown="btnPowerOptions_MouseDown"/>
     </Grid>
 </Window>
