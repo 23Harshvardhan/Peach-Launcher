@@ -12,5 +12,6 @@
     <Grid>
         <Rectangle x:Name="rectActionBar" Height="41" Margin="0,10,10,0" VerticalAlignment="Top" RadiusX="10" RadiusY="10" Fill="#7FFFFFFF" HorizontalAlignment="Right" Width="284"/>
         <Image x:Name="btnPowerOptions" HorizontalAlignment="Left" Height="25" Margin="1876,18,0,0" VerticalAlignment="Top" Width="25" Source="/Resource/SysImg/power.png" MouseDown="btnPowerOptions_MouseDown"/>
+        <Label x:Name="lblActClock" Content="00:00" HorizontalAlignment="Left" Margin="1632,14,0,0" VerticalAlignment="Top" FontSize="18"/>
     </Grid>
 </Window>

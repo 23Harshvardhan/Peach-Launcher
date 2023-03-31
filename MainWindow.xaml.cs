@@ -15,6 +15,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Peach_Launcher
 {
@@ -26,9 +27,31 @@ namespace Peach_Launcher
         public MainWindow()
         {
             InitializeComponent();
+
+            #region ========== DISPATCHED TIMER ==========
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            #endregion
         }
 
-        #region ========== Action Bar Events ==========
+        #region ========== UI EVENTS ==========
+
+        #region ========== Clock ==========
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            lblActClock.Content = DateTime.Now.ToString("hh:mm tt");
+        }
+
+        #endregion
+
+        #endregion
+
+        #region ========== ACTION BAR EVENTS ==========
 
         private void btnPowerOptions_MouseDown(object sender, MouseButtonEventArgs e)
         {
