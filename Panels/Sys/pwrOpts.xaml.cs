@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Peach_Launcher.Panels.Util;
+using Peach_Launcher.Sys.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +31,7 @@ namespace Peach_Launcher.Panels.Sys
 
         private void pwrOptsPnl_MouseLeave(object sender, MouseEventArgs e)
         {
+            SysVar.pwrOptsOpen = false;
             this.Close();
         }
 
@@ -38,12 +41,12 @@ namespace Peach_Launcher.Panels.Sys
 
         private void sysBtnShutdown_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Shutting Down");
+            OSHandle.ShutDownOS();
         }
 
         private void sysBtnRestart_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Restarting");
+            OSHandle.RestartOS();
         }
 
         private void sysBtnQuitLauncher_Click(object sender, RoutedEventArgs e)

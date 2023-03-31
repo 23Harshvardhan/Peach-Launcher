@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.1264.42, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.1264.42\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
@@ -87,6 +90,8 @@
     <Compile Include="Panels\Sys\pwrOpts.xaml.cs">
       <DependentUpon>pwrOpts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Sys\Utils\OSHandle.cs" />
+    <Compile Include="Sys\Utils\SysVar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -104,6 +109,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,7 +128,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Panels\Util\" />
-    <Folder Include="Sys\Utils\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\SysImg\restart.png" />
