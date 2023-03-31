@@ -11,6 +11,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -38,10 +39,24 @@ namespace Peach_Launcher
                 Point actBarPos = rectActionBar.TranslatePoint(new Point(0, 0), this);
 
                 pwrOpts powerOptionsPanel = new pwrOpts();
+
+                powerOptionsPanel.Opacity = 0;
                 powerOptionsPanel.Left = actBarPos.X;
                 powerOptionsPanel.Top = actBarPos.Y + 50;
                 powerOptionsPanel.Owner = this;
                 powerOptionsPanel.Show();
+
+                // Animation properties starts here
+                DoubleAnimation anim = new DoubleAnimation();
+                anim.From = 0;
+                anim.To = 1;
+                anim.Duration = new Duration(TimeSpan.FromSeconds(0.3));
+                Storyboard storyBoard = new Storyboard();
+                storyBoard.Children.Add(anim);
+                Storyboard.SetTarget(anim, powerOptionsPanel);
+                Storyboard.SetTargetProperty(anim, new PropertyPath(Window.OpacityProperty));
+                storyBoard.Begin();
+                // Animation properties ends here
             }
         }
 
